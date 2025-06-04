@@ -1,7 +1,6 @@
 import { Audiowide, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "./layout/Header";
-import SearchBox from "./layout/SearchBox";
 
 const audiowide = Audiowide({
   display: "swap",
@@ -23,10 +22,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${noto.variable} ${audiowide.variable} bg-blue-500 p-4`}
+        className={`${noto.variable} ${audiowide.variable} bg-blue-500 px-4`}
       >
         <Header />
-        <SearchBox />
         {children}
       </body>
     </html>

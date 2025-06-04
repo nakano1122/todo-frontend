@@ -9,7 +9,7 @@ const AllTodoList = () => {
         <span>タスク管理</span>
       </div>
       <NaviHeader />
-      <button className="bg-emerald-500 p-3 font-bold text-white rounded-xl w-1/5 hover:bg-green-600 transition-colors">
+      <button className="bg-emerald-500 p-3 font-bold text-white rounded-xl w-1/3 lg:w-1/5 hover:bg-green-600 transition-colors">
         ＋新しいタスクを追加
       </button>
       <AllTodoCard />
