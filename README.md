@@ -1,1 +1,3 @@
-# todo-frontend
+# TODO管理アプリ
+Goの習得用に作成。
+Goのリポジトリはこちら
