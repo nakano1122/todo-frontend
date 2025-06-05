@@ -1,4 +1,3 @@
-import Progress from "./components/Progress";
 import RelatedTaskList from "./components/RelatedTaskList";
 import TaskMain from "./components/TaskMain";
 
@@ -16,7 +15,6 @@ const TaskListPage = async ({ params }: TaskListPageProps) => {
         <TaskMain task_id={task_id} />
       </div>
       <div className="flex flex-col md:flex-row lg:flex-col w-2/5 gap-3">
-        <Progress />
         <RelatedTaskList />
       </div>
     </div>
