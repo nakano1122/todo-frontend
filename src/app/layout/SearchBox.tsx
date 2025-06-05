@@ -1,10 +1,13 @@
+import Breadcrumbs from "./Breadcrumbs";
+
 const SearchBox = () => {
   return (
     <div className="rounded-xl">
-      <div className="rounded-xl bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="max-w-xl mx-auto">
-            <div className="relative">
+      <div className="rounded-xl bg-gray-50">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+          <Breadcrumbs />
+          <div className="flex flex-col items-center">
+            <div className="relative sm:w-md md:w-xl">
               <input
                 type="text"
                 placeholder="タスクの検索..."
