@@ -1,6 +1,24 @@
+"use client";
+
+import { useState } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 
+const tags = [
+  "緊急",
+  "重要",
+  "仕事",
+  "個人",
+  "完了済み",
+  "進行中",
+];
+
 const SearchBox = () => {
+  const [query, setQuery] = useState("");
+  const filteredTags =
+    query === ""
+      ? []
+      : tags.filter((tag) => tag.includes(query)).slice(0, 5);
+
   return (
     <div className="rounded-xl">
       <div className="rounded-xl bg-gray-50">
@@ -10,6 +28,8 @@ const SearchBox = () => {
             <div className="relative sm:w-md md:w-xl">
               <input
                 type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 placeholder="タスクの検索..."
                 className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none bg-white"
               />
@@ -29,6 +49,19 @@ const SearchBox = () => {
                   />
                 </svg>
               </div>
+              {filteredTags.length > 0 && (
+                <ul className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                  {filteredTags.map((tag) => (
+                    <li
+                      key={tag}
+                      onClick={() => setQuery(tag)}
+                      className="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </div>
